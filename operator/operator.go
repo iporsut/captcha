@@ -17,24 +17,24 @@ const (
 	MUL
 )
 
-type binaryOperator func(left, right int) int
+func (o operator) Text() string {
+	return textOperators[int(o)]
+}
 
 var (
 	textOperators []string = []string{"+", "-", "x"}
 )
 
-var (
-	realOperators []binaryOperator = []binaryOperator{add, sub, mul}
-)
-
-func (o operator) Text() string {
-	return textOperators[int(o)]
-}
-
 func (o operator) Apply(left, right operand.Operand) int {
 	realOperator := realOperators[int(o)]
 	return realOperator(left.Value(), right.Value())
 }
+
+var (
+	realOperators []binaryOperator = []binaryOperator{add, sub, mul}
+)
+
+type binaryOperator func(left, right int) int
 
 func add(left, right int) int {
 	return left + right
