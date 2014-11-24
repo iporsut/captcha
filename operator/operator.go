@@ -18,7 +18,7 @@ const (
 )
 
 func (o operator) Text() string {
-	return textOperators[int(o)]
+	return textOperators[o]
 }
 
 var (
@@ -26,7 +26,7 @@ var (
 )
 
 func (o operator) Apply(left, right operand.Operand) int {
-	realOperator := realOperators[int(o)]
+	realOperator := realOperators[o]
 	return realOperator(left.Value(), right.Value())
 }
 
