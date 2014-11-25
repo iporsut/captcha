@@ -4,20 +4,15 @@ import (
 	"captcha/operand"
 )
 
-type Operator interface {
-	Apply(left, right operand.Operand) int
-	Text() string
-}
-
-type operator int
+type Operator int
 
 const (
-	ADD operator = iota
+	ADD Operator = iota
 	SUB
 	MUL
 )
 
-func (o operator) Text() string {
+func (o Operator) Text() string {
 	return textOperators[o]
 }
 
@@ -25,7 +20,7 @@ var (
 	textOperators []string = []string{"+", "-", "x"}
 )
 
-func (o operator) Apply(left, right operand.Operand) int {
+func (o Operator) Apply(left, right operand.Operand) int {
 	realOperator := realOperators[o]
 	return realOperator(left.Value(), right.Value())
 }

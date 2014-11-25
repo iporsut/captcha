@@ -5,11 +5,6 @@ import (
 	"captcha/operator"
 )
 
-type Captcha interface {
-	Text() string
-	Answer() int
-}
-
 type captcha struct {
 	left     operand.Operand
 	operator operator.Operator
