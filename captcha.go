@@ -1,8 +1,8 @@
 package captcha
 
 import (
-	"captcha/operand"
-	"captcha/operator"
+	"lab/kata/captcha/operand"
+	"lab/kata/captcha/operator"
 )
 
 type captcha struct {

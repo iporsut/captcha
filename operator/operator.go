@@ -1,8 +1,6 @@
 package operator
 
-import (
-	"captcha/operand"
-)
+import "lab/kata/captcha/operand"
 
 type Operator int
 

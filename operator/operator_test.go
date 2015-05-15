@@ -1,7 +1,7 @@
 package operator
 
 import (
-	"captcha/operand"
+	"lab/kata/captcha/operand"
 	"testing"
 )
 
